@@ -5,7 +5,7 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return render(request,"index.html")
+    return HttpResponse("im done with this")
 
 def success_page(request):
     return HttpResponse("<h1>this is a sucess page </h1>")
