@@ -1,13 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>django</title>
-</head>
-<body>
-    <h1>this is  a html page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block start %}
+    <h1>This template is run from the django server</h1>
+   <table class ="container">
+    <tr>
+      <th>s.no</th>
+      <th>name</th>
+      <th>age</th>
+      <th>can vote</th>
+    </tr>
+    <tr>
+      {% for people in peoples %}
+      <td>{{forloop.counter}}</td>
+      <td>{{people.name }}</td>
+      <td>{{people.age}}</td>
+      <td {% if people.age < 18 %} style="background:red" {% endif %} >
+        {% if people.age >= 18%}
+        👍
+        {% else%} 
+        👎       
+        {% endif %}
+    </td>
+      
+    </tr>
+    {% endfor %}
+   
+  </table>
+
+ <a href="/about/">about page</a><br>
+ <a href="/contact/">contact page</a>
+   
+{% endblock %}
