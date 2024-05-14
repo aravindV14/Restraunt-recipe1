@@ -18,11 +18,21 @@ from django.contrib import admin
 from django.urls import path
 from home.views import *
 from vege.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('home/',home,name="home"), 
     path('success-page/',success_page,name="success_page"),
     path('admin/', admin.site.urls),
     path('about/',about,name="about"),
     path('contact/',contact,name="contact"),
-    path('receipes/',receipes,name="receipes")
+    path('receipes/',receipes,name="receipes"),
+    path('delete_receipe/<id>',delete_receipe,name="delete_receipe"),
+    path('update_receipe/<id>',update_receipe,name="update_receipe")
 ]
+
+if settings.DEBUG:
+    urlpatterns+= static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+urlpatterns +=staticfiles_urlpatterns()
