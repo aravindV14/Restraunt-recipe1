@@ -139,6 +139,7 @@ STATICFILES_DIR ={
 MEDIA_ROOT = os.path.join(BASE_DIR,"public/static")
 MEDIA_URL ='/media/'
 
+
 #added for imagesend
 
 # Default primary key field type
