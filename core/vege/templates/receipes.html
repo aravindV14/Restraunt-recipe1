@@ -20,10 +20,21 @@
             <input type="file" class="form-control" name="receipe_image" required="receipe_image">
           </div>
         <button type="submit" class="btn btn-success">Add Receipe</button>
+        
       </form>
-
+     <div class="mt-5">
+      <div class="mx-auto col-6">
+        <form action="">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">search food</label>
+          <input type="text" class="form-control" name="search">
+        </div>
+        <button type="submit" class="btn btn-primary">search</button></div>
       
-      <table class="table">
+    </form>
+     </div>
+      
+      <table class="table mt-5">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -45,7 +56,8 @@
               <img src="/media/{{receipe.receipe_image}}" style="height: 100px;" alt="{{receipe.receipe_name}}">
             </td>
             <td>
-            <a href="/delete_receipe/{{receipe.id}}">  <button class="btn btn-danger">Delete</button></a>
+            <a href="/delete_receipe/{{receipe.id}}">  <button class="btn btn-danger m-2">Delete</button></a>
+            <a href="/update_receipe/{{receipe.id}}">  <button class="btn btn-success M-2">update</button></a>
             </td>
           </tr>
           {% endfor %}
