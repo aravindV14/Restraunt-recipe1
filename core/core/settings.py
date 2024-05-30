@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 ]
 EXTERNAL_APPS =['home',
                 'core',
-                'accounts',
                 'vege',]
 INSTALLED_APPS =EXTERNAL_APPS+INSTALLED_APPS
 MIDDLEWARE = [
